@@ -1,7 +1,8 @@
 import varint from 'varint'
 
-export default typedArray => {
+export default (typedArray, prefix) => {
   const set = []
+  if (prefix) typedArray = typedArray.subarray(prefix.length)
   const varintAndSub = typedArray => {
     const length = varint.decode(typedArray)
     // remove length
