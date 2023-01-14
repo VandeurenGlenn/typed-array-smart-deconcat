@@ -1,6 +1,6 @@
 {
   "name": "@vandeurenglenn/typed-array-smart-deconcat",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "TypedArray.set() the smartDeconcat() way",
   "type": "module",
   "exports": {
