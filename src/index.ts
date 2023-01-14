@@ -1,6 +1,6 @@
 import varint from 'varint'
 
-export default (typedArray: Uint8Array, prefix: Uint8Array): Uint8Array[] => {
+export default (typedArray: Uint8Array, prefix?: Uint8Array): Uint8Array[] => {
   const set: Uint8Array[] = []
   if (prefix) typedArray = typedArray.subarray(prefix.length)
   const varintAndSub = (typedArray: Uint8Array): Uint8Array[] => {
