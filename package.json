@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/VandeurenGlenn/typed-array-smart-deconcat#readme",
   "dependencies": {
-    "@leofcoin/binary": "^1.0.0"
+    "@leofcoin/binary": "^1.0.1"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.0.0",
