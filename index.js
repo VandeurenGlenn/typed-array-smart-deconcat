@@ -1,22 +1,5 @@
-import varint from 'varint';
+import { decodeFrames } from '@leofcoin/binary';
 
-var index = (typedArray, prefix) => {
-    const set = [];
-    if (prefix)
-        typedArray = typedArray.subarray(prefix.length);
-    const varintAndSub = (typedArray) => {
-        const length = varint.decode(typedArray);
-        // remove length
-        typedArray = typedArray.subarray(varint.decode.bytes);
-        // push value
-        set.push(typedArray.subarray(0, length));
-        // remove value
-        typedArray = typedArray.subarray(length);
-        if (typedArray.length !== 0)
-            return varintAndSub(typedArray);
-        return set;
-    };
-    return varintAndSub(typedArray);
-};
+var index = (typedArray, prefix) => decodeFrames(typedArray, prefix?.length ?? 0, { canonical: false });
 
 export { index as default };
